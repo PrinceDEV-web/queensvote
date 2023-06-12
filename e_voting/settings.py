@@ -150,6 +150,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 # Following settings only make sense in production and may break development environments.
 # Tell Django to copy statics to the `static files` directory
 # in your application directory on Render.
