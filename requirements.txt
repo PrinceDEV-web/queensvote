@@ -5,3 +5,4 @@ Pillow
 django-renderpdf
 requests
 gunicorn
+whitenoise==5.0.1
