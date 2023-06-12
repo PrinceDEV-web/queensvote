@@ -3,8 +3,6 @@ from . import views
 
 
 urlpatterns = [
-     # LANDING PAGE URL
-    path('', views.index, name="LandingPage"),
     
     path('login', views.account_login, name="account_login"),
     path('register/', views.account_register, name="account_register"),
