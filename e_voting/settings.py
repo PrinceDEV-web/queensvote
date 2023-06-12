@@ -134,19 +134,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT  =   os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_ROOT  =   os.path.join(BASE_DIR, 'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# STATIC_URL = '/static/'
+
+# MEDIA_URL = '/media/'
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 STATIC_URL = '/static/'
+# Following settings only make sense in production and may break development environments.
+# Tell Django to copy statics to the `static files` directory
+# in your application directory on Render.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Turn on the WhiteNoise storage backend that takes care of compressing static files
+# and creating unique names for each version so they can safely be cached forever.
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'account/static'),
+    os.psth.join(BASE_DIR, 'administrator/static'),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 AUTH_USER_MODEL = 'account.CustomUser'
 AUTHENTICATION_BACKENDS = ['account.email_backend.EmailBackend']
 
